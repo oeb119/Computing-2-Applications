@@ -24,6 +24,11 @@ Exam.every_third = function (input) {
     return thirds;
 };
 
+//better way (one line using filter) filters all the TRUE values
+Exam.every_third = function (array) {
+    return array.filter((v, k) => k % 3 === 0);
+};
+
 
 // Strings
 
