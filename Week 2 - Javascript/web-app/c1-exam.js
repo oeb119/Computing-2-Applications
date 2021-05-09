@@ -63,8 +63,9 @@ Exam.merge_sentences = function (first, second) {
 //     for example:
 //          the input "sPonGe bOb"
 //          returns 6
-Exam.lowercase_count = function () {
-    return;
+Exam.lowercase_count = function (str) {
+    let lower_str = str.filter(letter => letter.toLowerCase() === letter);
+    return lower_str.length;
 };
 
 
@@ -78,8 +79,13 @@ Exam.longest_key = function () {
 
 // Write a function that returns the largest value that is an even value in the
 // input dictionary whose values are all whole numbers.
-Exam.value_greatest_even = function () {
-    return;
+Exam.value_greatest_even = function (dict) {
+    if (
+        for (dict.values(i) % 1 == 0);
+    ) {
+        const result = dict.filter(number => number % 2 === 0);
+    };
+    return console.log(Math.max(result));
 };
 
 
@@ -90,10 +96,14 @@ Exam.value_greatest_even = function () {
 //
 // The username argument should not be set to a default,
 // but the location argument should default to "London".
-Exam.greeting = function () {
-    return;
+Exam.greeting = function (username, location = "London") {
+    return `Hello, ${username}, how is ${location} ?`;
 };
 
+// Try this version without the backtick quotes
+// Exam.greeting = function (username, location = "London") {
+//     return "Hello, " + username + ", how is " + location + "?";
+// };
 
 // Write a function three input arguments,
 // the first one, x, is required and the second two are
@@ -102,8 +112,13 @@ Exam.greeting = function () {
 //     offset with a default of 0
 // The function returns the calculation x * scalar + offset for the input x
 // if the output value of the calculation is positive, otherwise it returns 0.
-Exam.floor_line = function () {
-    return;
+Exam.floor_line = function (x, scalar = 1, offset = 0) {
+    let answer = x * scalar + offset
+    if (answer > 0) {
+        return answer
+    } else {
+        return 0
+    }
 };
 
 export default Object.freeze(Exam);
