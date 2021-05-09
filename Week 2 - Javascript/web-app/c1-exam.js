@@ -16,13 +16,14 @@ const Exam = Object.create(null);
 //    for example:
 //      an input list of [1,2,3,4,5,6,7,8]
 //      returns [1,4,7]
-Exam.every_third = function (input) {
-    let thirds = []
-    for (let i=0; i < input.length ; i+=3) {
-        thirds.push(input[i])
-    }
-    return thirds;
-};
+
+// Exam.every_third = function (input) {
+//     let thirds = []
+//     for (let i=0; i < input.length ; i+=3) {
+//         thirds.push(input[i])
+//     }
+//     return thirds;
+// };
 
 //better way (one line using filter) filters all the TRUE values
 Exam.every_third = function (array) {
@@ -40,8 +41,21 @@ Exam.every_third = function (array) {
 //       the input sentences "the cow jumped over the moon" and
 //                            "jack and jill went up the"
 //       returns "the jack cow and jumped jill over went the up moon the"
-Exam.merge_sentences = function () {
-    return;
+Exam.merge_sentences = function (first, second) {
+    if (first.length != second.length) {
+        throw 'ValueError'
+    } else (
+        let words1 = first.split(' ');
+        let words2 = second.split(' ');
+        combined = []
+        
+        words1.forEach(k => {
+            words2.forEach(i => {
+                combined.push(k, i)
+            });
+        });
+    );
+    return combined;
 };
 
 // Write a function that returns the number of lowercase letters in
