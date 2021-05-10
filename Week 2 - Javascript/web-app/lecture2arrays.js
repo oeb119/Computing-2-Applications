@@ -22,7 +22,7 @@ const students = [
 
 //Without return statements using the arrow instead (shorthand)
 const psychology_students = students.filter(
-    (student) => student.elective === "Design Psychology";
+    (student) => student.elective === "Design Psychology"
 ).map(
     function (s) => s.name
 );
