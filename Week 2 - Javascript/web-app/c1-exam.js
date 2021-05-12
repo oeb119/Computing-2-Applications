@@ -42,21 +42,26 @@ Exam.every_third = function (array) {
 //                            "jack and jill went up the"
 //       returns "the jack cow and jumped jill over went the up moon the"
 Exam.merge_sentences = function (first, second) {
-    if (first.length != second.length) {
-        throw 'ValueError'
-    } else (
-        let words1 = first.split(' ');
-        let words2 = second.split(' ');
-        combined = []
+    const words1 = first.split(' ');
+    const words2 = second.split(' ');
+    if (first.length !== second.length) {
+        throw 'ValueError';
+    }
+    return first.flatMap((v,l) => [v,second[k]]).join(' ');
+        // combined = []
         
-        words1.forEach(k => {
-            words2.forEach(i => {
-                combined.push(k, i)
-            });
-        });
+        // words1.forEach(k => {
+        //     words2.forEach(i => {
+        //         combined.push(k, i)
+        //     });
+        // });
     );
-    return combined;
+    return;
 };
+
+// return s1_words.flatMap((v, k) => [v, s2_words[k]]).join(" ");
+// Exam.merge_sentences = function () {
+    // return;
 
 // Write a function that returns the number of lowercase letters in
 // input string.
@@ -64,7 +69,7 @@ Exam.merge_sentences = function (first, second) {
 //          the input "sPonGe bOb"
 //          returns 6
 Exam.lowercase_count = function (str) {
-    let lower_str = str.filter(letter => letter.toLowerCase() === letter);
+    const lower_str = str.filter(letter => letter.toLowerCase() === letter);
     return lower_str.length;
 };
 
