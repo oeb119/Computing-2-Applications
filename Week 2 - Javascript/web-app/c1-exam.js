@@ -28,8 +28,6 @@ const Exam = Object.create(null);
 //better way (one line using filter) filters all the TRUE values
 Exam.every_third = function (array) {
     return array.filter((v, k) => k % 3 === 0);
-Exam.every_third = function (array) {
-    return array.filter((ignore, k) => k % 3 === 0);
 };
 
 
@@ -49,16 +47,13 @@ Exam.merge_sentences = function (first, second) {
     if (first.length !== second.length) {
         throw 'ValueError';
     }
-    return first.flatMap((v,l) => [v,second[k]]).join(' ');
+    return first.flatMap((v,k) => [v,second[k]]).join(' ');
         // combined = []
-        
         // words1.forEach(k => {
         //     words2.forEach(i => {
         //         combined.push(k, i)
         //     });
         // });
-    );
-    return;
 };
 
 // return s1_words.flatMap((v, k) => [v, s2_words[k]]).join(" ");
@@ -70,11 +65,23 @@ Exam.merge_sentences = function (first, second) {
 //     for example:
 //          the input "sPonGe bOb"
 //          returns 6
+// Exam.lowercase_count = function (str) {
+//     const letters = str.split(' ');
+//     return letters.filter(l) => l == l.toLowerCase()).length;
+// };
+
 Exam.lowercase_count = function (str) {
-    const lower_str = str.filter(letter => letter.toLowerCase() === letter);
-    return lower_str.length;
+    let numb = 0
+    for (let i = 0; i < str.length; i++) {
+        const char = str[i];
+        if (char == char.toLowerCase()) {
+            numb++
+        };
+    };
+    return numb;
 };
 
+// console.log(Exam.lowercase_count("heKuenGIU"));
 
 // Objects
 
@@ -86,15 +93,20 @@ Exam.longest_key = function () {
 
 // Write a function that returns the largest value that is an even value in the
 // input dictionary whose values are all whole numbers.
+
 Exam.value_greatest_even = function (dict) {
-    if (
-        for (dict.values(i) % 1 == 0);
-    ) {
-        const result = dict.filter(number => number % 2 === 0);
+    let maxi = 0
+    for (let key in dict) {
+        if (dict[key] % 2 === 0) {
+            if (dict[key] > maxi) {
+                maxi = dict[key];
+            }
+        }
     };
-    return console.log(Math.max(result));
+    return maxi;
 };
 
+debugger;
 
 // Arguments
 
