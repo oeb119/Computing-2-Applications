@@ -44,10 +44,11 @@ Exam.every_third = function (array) {
 Exam.merge_sentences = function (first, second) {
     const words1 = first.split(' ');
     const words2 = second.split(' ');
-    if (first.length !== second.length) {
+    if (words1.length !== words2.length) {
         throw 'ValueError';
     }
-    return first.flatMap((v,k) => [v,second[k]]).join(' ');
+    return words1.flatMap((v,k) => [v,words2[k]]).join(' ');
+        // ALTERNATE USING FOREACH LOOP
         // combined = []
         // words1.forEach(k => {
         //     words2.forEach(i => {
@@ -56,31 +57,29 @@ Exam.merge_sentences = function (first, second) {
         // });
 };
 
-// return s1_words.flatMap((v, k) => [v, s2_words[k]]).join(" ");
-// Exam.merge_sentences = function () {
-    // return;
-
 // Write a function that returns the number of lowercase letters in
 // input string.
 //     for example:
 //          the input "sPonGe bOb"
 //          returns 6
-// Exam.lowercase_count = function (str) {
-//     const letters = str.split(' ');
-//     return letters.filter(l) => l == l.toLowerCase()).length;
-// };
-
 Exam.lowercase_count = function (str) {
-    let numb = 0
-    for (let i = 0; i < str.length; i++) {
-        const char = str[i];
-        if (char == char.toLowerCase()) {
-            numb++
-        };
-    };
-    return numb;
+    const letters = str.split('');
+    return letters.filter((l) => l === l.toLowerCase()).length;
 };
 
+// ALTERNATE USING FOR LOOP
+// Exam.lowercase_count = function (str) {
+//     let numb = 0
+//     for (let i = 0; i < str.length; i++) {
+//         const char = str[i];
+//         if (char == char.toLowerCase()) {
+//             numb++
+//         };
+//     };
+//     return numb;
+// };
+
+// TO TEST:
 // console.log(Exam.lowercase_count("heKuenGIU"));
 
 // Objects
