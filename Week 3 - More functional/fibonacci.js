@@ -18,6 +18,16 @@
 
 
 // FIBONACCI
+// OPTIMIZED
+const fibonacci = (n, prevValue = 0, value = 1) => {
+    if(n == 0){
+        return value;
+    }
+    return fibonacci(n - 1, value, value + prevValue);
+}
+
+debugger;
+
 // NOT REALLY OPTIMIZED WAY
 // const fibonacci = (n, accum = 0) => {
 //     if (n<1) {
@@ -35,13 +45,13 @@
 // }
 
 
-// LUCAS
-const lucas = (n) => {
-    if (n==1) {
-        return 1;
-    }
-    if (n==0) {
-        return 2;
-    }
-    return lucas(n-2) + lucas(n-1);
-}
+// LUCAS (had forgotten the == signs instead of =)
+// const lucas = (n) => {
+//     if (n==1) {
+//         return 1;
+//     }
+//     if (n==0) {
+//         return 2;
+//     }
+//     return lucas(n-2) + lucas(n-1);
+// }
