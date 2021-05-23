@@ -1,10 +1,5 @@
-const range = (start, end, step) => {
-    let arr = [];
-    for (var i = start; i < end ; i += step) {
-        arr.push(i);
-    };
-    return arr;
+const first = (array) => {
+    return array.splice(0, array.length-1);
 };
 
-console.log(range(2,5,0.5));
-
+console.log(first([1,2,3,4,5]));

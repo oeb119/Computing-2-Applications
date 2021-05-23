@@ -7,7 +7,7 @@ List.sequence = (n) => {
         arr.push(i);
     };
     return arr;
-};
+}; //Works
 
 // Transposes a 2×2 array (swaps rows and columns).
 List.transpose = (array) => {
@@ -15,7 +15,7 @@ List.transpose = (array) => {
     array[0][1] = array[1][0];
     array[1][0] = first;
     return array;
-};
+}; //Works
 
 // Returns an array with equally spaced entries 
 // starting at start and ending at end (exclusive) 
@@ -27,7 +27,7 @@ List.range = (start, end, step) => {
         arr.push(i);
     };
     return arr;
-};
+}; //Works
 
 // Write curried versions of map, includes, filter, 
 // every, some, flat_map – i.e. for map, write a function 
@@ -44,22 +44,39 @@ List.flat_map
 // write reject = (function) => (array) => array, which is the 
 // oposite of filter, e.g. removes all values for which the function 
 // returns true.
-
+List.reject = (funct, array) => {
+    const new = [];
+    array.push(array.filter(array => array.map(funct) === true));
+    return array.map(x => array[x] in new);
+};
 
 
 // write first = (array) => element that returns the first element 
 // of the array, also write last
+List.first = (array) => {
+    return array[0];
+}; //Works
+
+List.last = (array) => {
+    return array.splice(array.length-1, 1);
+}; //Works
 
 // rest = (array) => array, return an array with the first element 
 // removed.
+List.rest = (array) => {
+    return array.splice(1,array.length-1);
+}; //Works
 
 // most = (array) => array, return an array with the last element removed.
 // zip = (function) => (array) => (array) => array, Zip is a 
 // function like map but that applies to two arrays. 
 // E.g. zip(g)([a, b, c])([x, y, z]) would return [g(a, x), g(b, y), g(c, z)].
+List.most = (array) => {
+    return array.splice(0, array.length-1);
+}; //Works
 
-
-
+List.zip = function => (array1 => array1.map(function))
+ => (array2) =>
 
 
 
