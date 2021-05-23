@@ -1,5 +1,15 @@
 const List = Object.create(null);
 
+// Figure out how Harris' Transpose one works
+// Curried version of map
+// Reject Function
+
+
+
+
+
+
+
 // Returns a new array with entries from 0 to n-1
 List.sequence = (n) => {
     let arr = [];
@@ -16,6 +26,10 @@ List.transpose = (array) => {
     array[1][0] = first;
     return array;
 }; //Works
+
+// List.transpose = (list) => list[0].map(
+//     (ignore, colIndex) => list.map((row) => row[colIndex])
+// );
 
 // Returns an array with equally spaced entries 
 // starting at start and ending at end (exclusive) 
@@ -41,6 +55,18 @@ List.every =
 List.some
 List.flat_map
 
+// List.curried_map = function (fun) {
+//     return function (array) {
+//         var i = 0;
+//         const len = array.length;
+//         while (i < len) {
+//             array[i] = fun(array[i]);
+//             i += 1;
+//         }
+//         return array;
+//     };
+// };
+
 // write reject = (function) => (array) => array, which is the 
 // oposite of filter, e.g. removes all values for which the function 
 // returns true.
@@ -50,6 +76,20 @@ List.reject = (funct, array) => {
     return array.map(x => array[x] in new);
 };
 
+// List.reject = function (condition_function) {
+//     return function (array) {
+//         const return_array = [];
+//         var i = 0;
+//         const len = array.length;
+//         while (i < len) {
+//             if (condition_function(array[i]) === false) {
+//                 return_array.push(array[i]);
+//             }
+//             i += 1;
+//         }
+//         return return_array;
+//     };
+// };
 
 // write first = (array) => element that returns the first element 
 // of the array, also write last

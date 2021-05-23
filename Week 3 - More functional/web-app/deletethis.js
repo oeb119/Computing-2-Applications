@@ -1,5 +1,5 @@
-const first = (array) => {
-    return array.splice(0, array.length-1);
-};
+const transpose = (list) => list[0].map(
+    (ignore, colIndex) => list.map((row) => row[colIndex])
+);
 
-console.log(first([1,2,3,4,5]));
+console.log(transpose([[1,2],[3,4]]));
