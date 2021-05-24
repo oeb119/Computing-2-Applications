@@ -48,24 +48,27 @@ List.range = (start, end, step) => {
 // with the signature map = (function) => (array) => array, 
 // that on its first call takes a function, and on its second 
 // takes an array and returns that function mapped to the array.
-List.map = (function) => (array) => array.map(function);
-List.includes = (function) => (array) => array.includes(function);
-List.filter = 
-List.every = 
-List.some
-List.flat_map
 
-// List.curried_map = function (fun) {
-//     return function (array) {
-//         var i = 0;
-//         const len = array.length;
-//         while (i < len) {
-//             array[i] = fun(array[i]);
-//             i += 1;
-//         }
-//         return array;
-//     };
-// };
+// List.map = (function) => (array) => array.map(function);
+// List.includes = (function) => (array) => array.includes(function);
+// List.filter = 
+// List.every = 
+// List.some
+// List.flat_map
+
+list.curried_map()()
+
+List.curried_map = function (fun) {
+    return function (array) {
+        var i = 0;
+        const len = array.length;
+        while (i < len) {
+            array[i] = fun(array[i]);
+            i += 1;
+        }
+        return array;
+    };
+};
 
 // write reject = (function) => (array) => array, which is the 
 // oposite of filter, e.g. removes all values for which the function 
